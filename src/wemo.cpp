@@ -39,7 +39,7 @@ void setup()
 void loop() {
   if ( irrecv.decode(&results) ) {
     if (results.decode_type == MAGIQUEST) {
-      Serial.printf("Decoded MAGIQUEST - Magnitude=%d, ID=0x", results.magiquestMagnitude, results.value);
+      Serial.printf("Decoded MAGIQUEST - Magnitude=%d, ID=0x", results.command, results.address);
       Serial.printf("%X\n", results.value);
       if (millis() - debounceTime > debounceDelay) {
         int state = getState();
